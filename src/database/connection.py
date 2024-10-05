@@ -1,25 +1,19 @@
-import dotenv
 import os
-
+import dotenv
+from flask import g
 from pymongo import MongoClient
 
 dotenv.load_dotenv()
 
 uri = os.getenv('CONNECTION_URI')
-client = MongoClient(uri)
 
 
-def get_connection():
-    try:
-        database = client.get_database("test")
-        data = database.get_collection("data")
+def get_client():
+    if "db_client" not in g:
+        g.db_client = MongoClient(uri)
+    return g.db_client
 
-        query = {"title": "Just a test"}
-        results = data.find_one(query)
 
-        print(results)
-
-        client.close()
-
-    except Exception as error:
-        raise Exception("Não encontrado por: ", error)
+def get_database():
+    client = get_client()
+    return client["cafe_reparo"]
