@@ -6,7 +6,6 @@ services:
   mongo:
     image: mongo:latest
     container_name: CafeReparo-mongodb
-    restart: always
     ports:
       - "27017:27017"
     environment:
