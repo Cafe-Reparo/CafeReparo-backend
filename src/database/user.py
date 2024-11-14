@@ -82,7 +82,7 @@ def update_one(key, payload):
 def soft_delete_one(key):
     """
     Marca o usuário para ser ignorado em qualquer operação futura.
-    Altera o campo is_active do _id enviado para false.
+    Altera o campo is_active do _id encontrado para false.
     Retorna uma mensagem de sucesso e o _id do usuário atualizado, ou erro.
     """
     database = get_database()
