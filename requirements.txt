@@ -1,0 +1,22 @@
+# Default
+blinker==1.8.2
+click==8.1.7
+colorama==0.4.6
+itsdangerous==2.2.0
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+
+# Config
+python-dotenv==1.0.1
+
+# Routing
+Jinja2==3.1.4
+Flask==3.0.3
+Flask-Cors==5.0.0
+
+# Database
+dnspython==2.6.1
+pymongo==4.9.1
+
+# Modelling
+marshmallow==3.22.0
