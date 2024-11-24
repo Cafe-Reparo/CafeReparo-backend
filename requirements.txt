@@ -6,7 +6,7 @@ itsdangerous==2.2.0
 MarkupSafe==2.1.5
 Werkzeug==3.0.4
 
-# Configs
+# Config
 python-dotenv==1.0.1
 
 # Routing
@@ -17,3 +17,6 @@ Flask-Cors==5.0.0
 # Database
 dnspython==2.6.1
 pymongo==4.9.1
+
+# Modelling
+marshmallow==3.22.0
