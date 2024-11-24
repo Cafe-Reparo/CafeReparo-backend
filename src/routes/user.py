@@ -88,6 +88,6 @@ def userDeleteOne(key):
     try:
         response = handleUserDeleteOne(key)
 
-        return ({"message": "User hard-deleted successfully", "_id": key}), 200
+        return ({'message': "User hard-deleted successfully", '_id': key}), 200
     except Exception as error:
         abort(500, description=str(error))
