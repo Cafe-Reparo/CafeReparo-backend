@@ -3,7 +3,7 @@ from marshmallow import ValidationError
 
 def validate(payload, schema):
     """
-    Valida um payload com base em um schema.
+    Valida payload com base em um schema.
     """
     try:
         return schema().load(payload)
