@@ -6,20 +6,17 @@ from src.utils.schemas.userSchema import UserSchema
 from src.utils.validate import validate
 
 
-def handleUserCreate(formformData):
+def handleUserCreate(formData):
     """
     Cria um usuário no banco de dados.
     Transforma os dados nos formatos esperados pelo MongoDB, valida-os e os passa para a função de criação.
     Retorna a resposta do banco de dados, ou erro.
     """
     try:
-        formformData['birthday'] = convertToDatetime(formformData['birthday'])
-        formformData['creation'] = datetime.now(tz=timezone.utc)
-        formformData['picture'] = dict(formData='', subType='00')
-        formformData['is_admin'] = False
-        formformData['is_active'] = True
+        formData['birthday'] = convertToDatetime(formData['birthday'])
+        formData['creation'] = datetime.now(tz=timezone.utc)
 
-        payload = validate(formformData, UserSchema)
+        payload = validate(formData, UserSchema)
 
         return create(payload)
     except ValidationError as validation_error:
