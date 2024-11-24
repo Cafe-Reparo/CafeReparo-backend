@@ -73,7 +73,7 @@ def handleUserUpdateOne(key, formData):
 
         return update_one(key, payload)
     except ValidationError as validation_error:
-        raise ValueError(f'Invalid data: {validation_error}')
+        raise ValueError(f"Invalid data: {validation_error}")
 
 
 def handleUserSoftDeleteOne(key):

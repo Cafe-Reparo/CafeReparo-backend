@@ -1,13 +1,16 @@
 from flask import Flask, render_template, g
 from flask_cors import CORS
+
 from src.routes.user import user_bp
 from src.routes.repair import repair_bp
+from src.routes.tags import tags_bp
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 app.register_blueprint(user_bp)
 app.register_blueprint(repair_bp)
+app.register_blueprint(tags_bp)
 
 
 @app.teardown_appcontext
